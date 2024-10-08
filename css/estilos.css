@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+   
+    /* Elimina los márgenes y rellenos predeterminados de todos los elementos */
+    margin: 0;
+    padding: 0;
+
+    /* Asegura que el tamaño de los elementos incluya bordes y rellenos en su cálculo */
+    box-sizing: border-box;
+
+    /* Elimina la decoración (como subrayado) de los enlaces por defecto */
+    text-decoration: none;
+
+    /* Aplica la fuente 'Poppins' a todos los elementos de la página */
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    /* Define variables CSS para los colores y tamaños de texto */
+    --color_text-primary: #9a5fb5df;       /* Color de texto primario */
+    --color_text-secundary: #000000;     /* Color de texto secundario */
+    --color_text-tertiary: #0D1345;      /* Color de texto terciario */
+    --main_color-primary: #C5D9D2;       /* Color principal */
+    --main_color-secundary: #D9D0D4;     /* Color secundario */
+    --background-color: #383d60;         /* Color de fondo */
+    --lowText_font_size: 16px;           /* Tamaño de fuente para texto pequeño */
+    --text_size_title: 40px;             /* Tamaño de fuente para títulos */
+    --text_title_card: 24px;             /* Tamaño de fuente para títulos de tarjeta */
+    --text_title_cardv2: 20px;           /* Tamaño de fuente para subtítulos de tarjeta */
+    --text_paragraph: 16px;              /* Tamaño de fuente para párrafos */
+    --box_shadow-primary: 0px 6px 50px -20px rgba(0,0,0,0.2); /* Sombra principal */
+}
+
+/* Header */
+
+header {
+    /* El header ocupa el 100% del ancho */
+    width: 100%;
+
+    /* Define la altura del header en 100px */
+    height: 100px;
+
+    /* Hace que el header permanezca fijo mientras se hace scroll */
+    position: fixed;
+
+    /* Controla el apilamiento del header para que esté por encima de otros elementos */
+    z-index: 100;
+}
+
+.container_header {
+    /* Limita el ancho máximo del contenedor a 1200px */
+    max-width: 1200px;
+
+    /* Ocupa el 100% de la altura del header */
+    height: 100%;
+
+    /* Centra el contenedor horizontalmente */
+    margin: auto;
+
+    /* Usa flexbox para distribuir los elementos hijos */
+    display: flex;
+
+    /* Distribuye los elementos con espacio entre ellos */
+    justify-content: space-between;
+
+    /* Alinea verticalmente los elementos al centro */
+    align-items: center;
+
+    /* Añade un relleno lateral de 20px */
+    padding: 0px 20px;
+}
+
+.logo {
+    /* Usa flexbox para alinear los elementos hijos del logo */
+    display: flex;
+
+    /* Alinea verticalmente el contenido del logo */
+    align-items: center;
+
+    /* Posiciona el logo en un nivel superior, en caso de superposición */
+    position: relative;
+    z-index: 1;
+}
+
+.logo img {
+    /* Define el ancho de la imagen del logo a 100px */
+    width: 100px;
+}
+
+.menu {
+    /* Usa flexbox para alinear los elementos del menú */
+    display: flex;
+
+    /* Alinea verticalmente los elementos dentro del menú */
+    align-items: center;
+
+    /* Fondo transparente por defecto para el menú */
+    background-color: transparent;
+
+    /* Aplica una transición suave al cambiar el color de fondo */
+    transition: background-color 0.3s ease;
+
+    /* Hace que el menú se quede fijo en la parte superior cuando se hace scroll */
+    position: sticky;
+
+    /* Fija la posición del menú en la parte superior de la pantalla */
+    top: 0;
+
+    /* Asegura que el menú ocupe el ancho completo de la pantalla */
+    width: 100%;
+
+    /* Asegura que el menú esté en la parte superior de otros elementos */
+    z-index: 1000;
+}
+
+.menu nav {
+    /* Añade un margen de 20px a los lados del menú de navegación */
+    margin: 0px 20px;
+}
+
+.menu nav ul {
+    /* Usa flexbox para alinear los elementos de la lista horizontalmente */
+    display: flex;
+}
+
+.menu nav ul li {
+    /* Elimina los puntos de lista predeterminados */
+    list-style: none;
+
+    /* Añade un margen de 20px arriba y abajo, y 16px a los lados */
+    margin: 20px 16px;
+}
+
+.menu nav ul li a {
+    /* Aplica el color de texto secundario a los enlaces del menú */
+    color: var(--color_text-secundary);
+
+    /* Usa el tamaño de texto pequeño definido en las variables */
+    font-size: var(--lowText_font_size);
+
+    /* Define que el enlace esté en posición relativa */
+    position: relative;
+}
+
+.menu nav ul li a:hover {
+    /* Cambia el color del enlace al primario cuando se pasa el ratón sobre él */
+    color: var(--color_text-primary);
+}
+
+.btn_quote {
+    /* Hace que el botón se muestre como un bloque */
+    display: block;
+
+    /* Define el relleno del botón: 8px arriba/abajo, 40px a los lados */
+    padding: 8px 40px;
+
+    /* Añade un borde sólido de 2px del color de texto primario */
+    border: 2px solid var(--color_text-primary);
+
+    /* Aplica bordes redondeados de 8px al botón */
+    border-radius: 8px;
+
+    /* Hace el texto más grueso */
+    font-weight: 500;
+
+    /* Aplica el color de texto terciario al texto del botón */
+    color: var(--color_text-tertiary);
+
+    /* Añade un margen lateral de 20px */
+    margin: 0px 20px;
+
+    /* Aplica una transición suave de 300ms a todas las propiedades */
+    transition: all 300ms;
+}
+
+.btn_quote:hover {
+    /* Cambia el color del texto a blanco cuando se pasa el ratón */
+    color: white;
+
+    /* Cambia el fondo del botón al color primario */
+    background: var(--color_text-primary);
+}
+
+.menu .socialMedia {
+    /* Añade un margen de 10px a los lados del área de redes sociales */
+    margin: 0px 10px;
+}
+
+.menu .socialMedia a {
+    /* Añade un margen de 4px entre los iconos de redes sociales */
+    margin: 0px 4px;
+}
+
+.menu .socialMedia img {
+    /* Define el ancho de las imágenes de redes sociales a 30px */
+    width: 30px;
+ 
+}
+
+/*Portada Inicio*/
+
+.container__cover{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: var(--main_color-secundary);
+}
+
+.cover{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.text__cover{
+    width: 100%;
+    padding-right: 150px;
+}
+
+.text__cover h1{
+    font-size: 50px;
+    color: var(--color_text-secundary);
+}
+
+.text__cover p{
+    font-size: var(--text_paragraph);
+    margin-top: 40px;
+    color: var(--color_text-tertiary);
+}
+
+.btn__text{
+    display: block;
+    width: 150px;
+    margin-top: 40px;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: 500;
+    background: #9a5fb5df;
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.btn__text:hover{
+    background: transparent;
+    border: 2px solid #9a5fb5df;
+    color: rgb(0, 0, 0);
+}
+
+.image__cover{
+    width: 100%;
+}
+
+.image__cover img{
+    width: 550px;
+}
+
+/*End Portada Inicio*/
+
+/*Estilos Generales Cards*/
+
+.container__card-primary{
+    padding-top: 100px;
+}
+
+.card__primary{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.text__card-primary{
+    max-width: 800px;
+    margin: auto;
+}
+
+.text__card-primary p{
+    color: var(--color_text-primary);
+    letter-spacing: 4px;
+    font-size: var(--text_paragraph);
+    font-weight: 500;
+}
+.text__card-primary h1{
+    font-size: var(--text_size_title);
+    font-weight: 600;
+    color: var(--color_text-secundary);
+}
+
+.container__box-cardPrimary{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.box__card-primary{
+    max-width: 350px;
+    padding: 60px 40px;
+    border: 1px solid #9a5fb5df;
+    border-radius: 20px;
+    margin: 14px;
+    transition: all 300ms;
+}
+
+.box__card-primary:hover{
+    border: 1px solid transparent;
+    box-shadow: var(--box_shadow-primary);
+}
+
+.box__card-primary img {
+    max-width: 100%; /* Make sure images don't overflow */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra spaces under the image */
+    margin: 0 auto; /* Center horizontally */
+}
+
+.box__card-primary h2{
+    font-size: var(--text_title_card);
+    margin-top: 40px;
+    font-weight: 500;
+}
+
+.box__card-primary p{
+    margin-top: 20px;
+}
+
+/*End Estilos Generales Cards*/
+
+/*Sobre Nosotros*/
+
+.container__about{
+    padding: 100px 0px;
+    background: #bc85d6df;;
+    margin-top: 100px;
+}
+
+.about{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text__about{
+    width: 100%;
+    padding-right: 40px;
+}
+
+.text__about h1{
+    color: var(--color_text-secundary);
+    font-weight: 600;
+}
+
+.text__about p{
+    font-size: var(--text_paragraph);
+    margin-top: 40px;
+    color: var(--color_text-tertiary);
+}
+
+
+.image__about{
+    width: 100%;
+    display: flex;
+}
+
+.image__about img{
+    width: 250px;
+    border-radius: 155px;
+    padding: 10px 10px;
+    margin:10px;
+}
+
+/*End Sobre Nosotros*/
